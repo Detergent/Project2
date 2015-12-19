@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>JamPlan Session Scheduling</title>
+        <link rel="icon" href="../../public/images/favicon.ico">
+
+        <!-- Bootstrap -->
+        <link href="public/stylesheets/bootstrap.min.css" rel="stylesheet">
+        <link href="public/stylesheets/signin.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <% if(typeof fname !== "undefined") { %>
+                <h2><%= fname %> has been successfully logged out.</h2>
+                <a href="/">Return to Login</a>
+            <% } else{ %>
+                <h2>Logged out.</h2>
+                <a href="/">Return to Login</a>
+            <% } %>
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <!-- Include all compiled plugins (below), or include individual files as needed -->
+            <script src="public/javascripts/bootstrap.min.js"></script>
+        </div>
+    </body>
+</html>

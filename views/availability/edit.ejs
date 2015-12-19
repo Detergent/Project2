@@ -1,0 +1,110 @@
+<% include ../partials/header%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/about">JamPlan</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/dashboard"><%= fname %>'s Dashboard</a></li>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/playerprofiles">Player Profiles</a></li>
+                <li class="active"><a href="/availability">Availability<span class="sr-only">(current)</span></a></li>
+                <li><a href="/practicespaces">Practice Spaces</a></li>
+                <li><a href="/sessions">Start a Session</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/about">About JamPlan</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Availability</h1>
+
+            <h2 class="sub-header">Current Availability</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>Through</th>
+                    </tr>
+                    </thead>
+                    <tbody id="availability">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="sub-header">Editing Availability:</h2>
+            <h3 class="sub-header">Please note: Editing is done by deleting then readding an availability range.</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>Through</th>
+                    </tr>
+                    </thead>
+                    <tbody id="edit_availability">
+                    <tr>
+                        <td>Current From Time: <%= start_time %></td>
+                        <td>Current To Time: <%= end_time %></td>
+                    </tr>
+                    <tr>
+                        <form id="availabilityEdit" class="form-register" action="/availability/saveedit">
+                            <input type="hidden" name="old_start_time" id="old_start_time" value=<%= start_time %>>
+                            <input type="hidden" name="old_end_time" id="old_end_time" value=<%= end_time %>>
+                            <td>
+                                <input type="datetime-local" name="start_time" id="start_time" class="form-control" required autofocus>
+                            </td>
+                            <td>
+                                <input type="datetime-local" name="end_time" id="end_time" class="form-control" required >
+                            </td>
+                            <td><button id="submit_btn" class="btn btn-lg btn-primary btn-block" type="submit">Update</button></td>
+                        </form>
+                    </tr>
+                    <tr>
+                        <td><a href="/availability/delete?start_time=<%= start_time %>&end_time=<%= end_time %>"
+                               id="delete_record" class="btn btn-lg btn-warning btn-block">Delete this record</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted text-center">Copyright Justin Guarino 2016</p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/public/javascripts/bootstrap.min.js"></script>
+
+<script src="/public/javascripts/loadprofiles.js"></script> <!--ghetto adding these to all pages..-->
+<script src="/public/javascripts/loadpracticespaces.js"></script>
+<script src="/public/javascripts/loadavailability.js"></script>
+<script src="/public/javascripts/loadsessions.js"></script>
+<script src="/public/javascripts/availabilitydropdown.js"></script>
+</body>
+</html>

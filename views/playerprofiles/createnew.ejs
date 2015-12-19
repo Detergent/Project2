@@ -1,0 +1,82 @@
+<% include ../partials/header%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/about">JamPlan</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/dashboard"><%= fname %>'s Dashboard</a></li>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li class="active"><a href="/playerprofiles">Player Profiles<span class="sr-only">(current)</span></a></li>
+                <li><a href="/availability">Availability</a></li>
+                <li><a href="/practicespaces">Practice Spaces</a></li>
+                <li><a href="/sessions">Start a Session</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/about">About JamPlan</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Player Profiles</h1>
+
+            <h2 class="sub-header">Create New Profile:</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Years of Experience (integer please)</th>
+                        <th>Equipment Quality</th>
+                        <th>Favorite Genres</th>
+                    </tr>
+                    </thead>
+                    <tbody id="edit_profile">
+                    <tr>
+                        <form id="profileCreate" class="form-register" action="/playerprofiles/savenew">
+                            <td>
+                                <input type="text" name="instrument" id="instrument" class="form-control" required autofocus>
+                            </td>
+                            <td>
+                                <input type="number" name="years_playing" id="years_playing" class="form-control" required >
+                            </td>
+                            <td>
+                                <input type="text" name="equipment_level" id="equipment_level" class="form-control" required >
+                            </td>
+                            <td>
+                                <input type="text" name="favorite_genres" id="favorite_genres" class="form-control" required >
+                            </td>
+                            <td><button id="submit_btn" class="btn btn-lg btn-primary btn-block" type="submit">Update</button></td>
+                        </form>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted text-center">Copyright Justin Guarino 2016</p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+<% include ../partials/footer%>

@@ -1,0 +1,69 @@
+<% include partials/header%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/about">JamPlan</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/dashboard"><%= fname %>'s Dashboard</a></li>
+                <li><a href="/logout">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/playerprofiles">Player Profiles</a></li>
+                <li><a href="/availability">Availability</a></li>
+                <li><a href="/practicespaces">Practice Spaces</a></li>
+                <li><a href="/sessions">Start a Session</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="/about">About JamPlan<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">About Jamplan</h1>
+
+            <h2 class="sub-header">What is JamPlan?</h2>
+            <div>
+               <p>JamPlan is a simple scheduling tool that allows musicians to connect with one another. You start
+               by adding a bit of info on the instruments you play, favorite genres, etc. Once you have that you add
+               your availability before searching for others who are free to play when you are. If you have a practice
+               space you can offer it to other users, or you can search for other users who might have a place to jam.</p>
+            </div>
+
+            <h2 class="sub-header">Who am I?</h2>
+            <div>
+                <p>My name is Justin Guarino and I a student at Sonoma State University (until I graduate in about a week,
+                assuming I pass this database class). I play drums when I can but often find it hard to coordinate
+                practice sessions with my friends.</p>
+            </div>
+
+            <h2 class="sub-header">Contact Info</h2>
+            <div>
+                <p>Problems with the site? Please send an email to webmaster@jamplan.com</p>
+                <p>Interested in playing music? Sign up on JamPlan!</p>
+            </div>
+
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted text-center">Copyright Justin Guarino 2016</p>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+<% include partials/footer%>
